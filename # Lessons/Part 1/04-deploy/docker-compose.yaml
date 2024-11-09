@@ -1,0 +1,17 @@
+services:
+  inventory:
+    build:
+      context: ./inventory
+      dockerfile: Dockerfile
+    ports:
+      - '5002:5002'
+    environment:
+      - PORT=5002
+  orders:
+    build:
+      context: ./orders
+      dockerfile: Dockerfile
+    ports:
+      - '5001:5001'
+    environment:
+      - PORT=5001
